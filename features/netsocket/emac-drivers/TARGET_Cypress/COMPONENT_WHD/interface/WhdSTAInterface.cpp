@@ -402,6 +402,12 @@ nsapi_error_t WhdSTAInterface::disconnect()
     if (_olm != NULL) {
         _olm->deinit_ols();
     }
+    //KUK for power down
+    if (_whd_emac.powered_up) {
+        _whd_emac.power_down();
+          
+        
+    }
 
     return NSAPI_ERROR_OK;
 }
