@@ -64,7 +64,7 @@ public:
      *                  or 0 if measurement impossible.
      */
     virtual int8_t get_rssi() = 0;
-
+	virtual void wifi_off() = 0;
     /** Attempt to connect to a Wi-Fi network.
      *
      *  @param ssid      Name of the network to connect to.

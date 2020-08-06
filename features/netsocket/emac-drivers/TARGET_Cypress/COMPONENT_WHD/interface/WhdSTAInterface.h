@@ -140,7 +140,7 @@ public:
      * @return          Connection strength in dBm (negative value)
      */
     int8_t get_rssi();
-
+	void wifi_off();
     /** Scan for available networks in WiFiAccessPoint format
      *
      * This function will block.

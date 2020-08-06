@@ -402,12 +402,6 @@ nsapi_error_t WhdSTAInterface::disconnect()
     if (_olm != NULL) {
         _olm->deinit_ols();
     }
-    //KUK for power down
-    if (_whd_emac.powered_up) {
-        _whd_emac.power_down();
-          
-        
-    }
 
     return NSAPI_ERROR_OK;
 }
@@ -430,6 +424,12 @@ int8_t WhdSTAInterface::get_rssi()
     }
 
     return (int8_t)rssi;
+}
+void WhdSTAInterface::wifi_off()
+{
+    if (_whd_emac.powered_up) {
+        _whd_emac.power_down();
+    }
 }
 
 static void whd_scan_handler(whd_scan_result_t **result_ptr,

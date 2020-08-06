@@ -89,9 +89,6 @@ void WHD_EMAC::power_down()
 {
     if (powered_up) {
         powered_up = false;
-        //KUK Powerupdown
-        // whd_wifi_off(ifp);
-        // whd_deinit(ifp);
         cybsp_wifi_deinit(ifp);
     }
 }
